@@ -1,0 +1,23 @@
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-card p {
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stat-card h2 {
+  color: #08a7a2;
+  font-size: 34px;
+}

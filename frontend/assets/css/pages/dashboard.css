@@ -1,0 +1,308 @@
+.chart-placeholder {
+  height: 280px;
+  margin-top: 12px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fbffff 0%, #f2fafa 100%);
+}
+
+.peak {
+  position: absolute;
+  bottom: -40px;
+  right: 100px;
+  width: 180px;
+  height: 220px;
+  border-radius: 55% 45% 10% 10%;
+  background: rgba(32, 178, 170, 0.4);
+  transform: rotate(8deg);
+}
+
+.page-title {
+  margin-bottom: 14px;
+  font-size: 22px;
+}
+
+.upload-box {
+  border: 2px dashed #90b3d1;
+  border-radius: 12px;
+  padding: 26px;
+  text-align: center;
+  color: #48627c;
+  background: linear-gradient(180deg, #fbfdff 0%, #f3f8fd 100%);
+}
+
+.upload-box p {
+  margin: 0;
+  font-weight: 600;
+  color: #2f587f;
+}
+
+#liqImageInput {
+  display: none;
+}
+
+.department-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+.department-box h3 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.department-box ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #3d4752;
+  line-height: 1.7;
+}
+
+.class-panel {
+  margin-top: 16px;
+}
+
+.class-groups .department-box {
+  background: #fff;
+  border: 1px solid #e4ebf3;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.class-groups .department-box h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.class-groups .department-box ul {
+  max-height: 260px;
+  overflow: auto;
+}
+
+.room-action-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.room-icon-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d5dde7;
+  border-radius: 8px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.room-icon-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.room-detail-shell {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.room-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.room-detail-title-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f80ed;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.room-code-badge {
+  background: #e7eef9;
+  color: #1d70d3;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-weight: 700;
+}
+
+.room-detail-divider {
+  height: 1px;
+  background: #e8edf4;
+  margin: 14px 0 20px;
+}
+
+.room-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.room-detail-item {
+  border: 1px solid #e3eaf3;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.room-detail-item-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ecf3fd;
+  color: #2f80ed;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-detail-label {
+  margin: 0 0 4px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.room-detail-value {
+  margin: 0;
+  color: #243447;
+  font-size: 28px;
+}
+
+.room-back-btn {
+  min-width: 120px;
+}
+
+/* Quản lý danh mục — chỉ Sửa + Xóa, ô vuông gọn */
+.category-icon-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.category-icon-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid #c9d4e0;
+  border-radius: 8px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category-icon-btn:hover {
+  border-color: #8fbbe6;
+  box-shadow: 0 1px 4px rgba(29, 123, 215, 0.15);
+}
+
+.category-icon-btn img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.asset-detail-section {
+  border: 1px solid #e2eaf3;
+  border-radius: 14px;
+  padding: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.asset-detail-header {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8eef5;
+}
+
+.asset-detail-header h2 {
+  margin: 0;
+  color: #1f3347;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.asset-detail-header p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.asset-detail-form {
+  gap: 14px 16px;
+}
+
+.asset-detail-form .field {
+  background: #fff;
+  border: 1px solid #e5edf5;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.asset-detail-form .field label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #48627c;
+}
+
+.asset-note-input {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.asset-detail-actions {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e8eef5;
+}
+
+.asset-detail-actions .btn {
+  min-width: 120px;
+}
+
+.transfer-truck-btn,
+.liquidation-view-btn {
+  width: 74px;
+  height: 74px;
+}
+
+.transfer-truck-btn img,
+.liquidation-view-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+@media (max-width: 1100px) {
+  .cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .department-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,6 @@
+@media (max-width: 1100px) {
+  .form-grid,
+  .cards-users {
+    grid-template-columns: 1fr;
+  }
+}
