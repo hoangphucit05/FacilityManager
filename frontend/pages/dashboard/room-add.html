@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thêm phòng</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button"><span>Tòa nhà</span><span>▾</span></button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../dashboard/departments.html">Quản lý phòng / khu vực</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 class="page-title">Thêm phòng mới</h1>
+          <p class="form-building-hint">Gán phòng cho: <strong id="roomAddBuildingLabel">Tòa nhà</strong></p>
+          <form id="roomAddForm" class="form-grid" novalidate method="post" action="#">
+            <input type="hidden" id="roomTargetBuilding" name="roomTargetBuilding" value="" />
+            <div class="field">
+              <label for="roomCodeInput">Mã phòng</label>
+              <input type="text" id="roomCodeInput" name="roomCodeInput" required autocomplete="off" placeholder="VD: E1-301" />
+            </div>
+
+            <div class="field">
+              <label for="roomFloorInput">Tầng</label>
+              <input type="number" id="roomFloorInput" name="roomFloorInput" min="1" step="1" required />
+            </div>
+
+            <div class="field">
+              <label for="roomClassUsingInput">Lớp đang sử dụng</label>
+              <select id="roomClassUsingInput" name="roomClassUsingInput" data-k65-class required>
+                <option value="">Chọn lớp</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="roomCapacityInput">Sức chứa</label>
+              <input type="number" id="roomCapacityInput" name="roomCapacityInput" min="1" step="1" required />
+            </div>
+
+            <div class="field field-radios">
+              <span class="field-label" id="roomStatusLabel">Trạng thái</span>
+              <div class="radio-group" role="group" aria-labelledby="roomStatusLabel">
+                <label>
+                  <input id="roomStatusInUse" type="radio" name="roomStatus" value="Đang sử dụng" required />
+                  Đang sử dụng
+                </label>
+                <label>
+                  <input id="roomStatusAvailable" type="radio" name="roomStatus" value="Trống" />
+                  Trống
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="roomTeacherInput">Giảng viên dạy</label>
+              <input type="text" id="roomTeacherInput" name="roomTeacherInput" required autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="roomClassInput">Lớp đang học</label>
+              <select id="roomClassInput" name="roomClassInput" data-k65-class required>
+                <option value="">Chọn lớp</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="roomDesksInput">Số bàn</label>
+              <input type="number" id="roomDesksInput" name="roomDesksInput" min="0" step="1" required />
+            </div>
+
+            <div class="field">
+              <label for="roomChairsInput">Số ghế</label>
+              <input type="number" id="roomChairsInput" name="roomChairsInput" min="0" step="1" required />
+            </div>
+
+            <div class="field">
+              <label for="roomSpeakersInput">Loa</label>
+              <input type="number" id="roomSpeakersInput" name="roomSpeakersInput" min="0" step="1" required />
+            </div>
+
+            <div class="field">
+              <label for="roomAirConditionerInput">Điều hòa</label>
+              <input type="number" id="roomAirConditionerInput" name="roomAirConditionerInput" min="0" step="1" required />
+            </div>
+
+            <div class="field">
+              <label for="roomMicrophoneInput">Micro</label>
+              <input type="number" id="roomMicrophoneInput" name="roomMicrophoneInput" min="0" step="1" required />
+            </div>
+
+            <div class="field field-radios">
+              <span class="field-label" id="roomGlassLabel">Cửa kính</span>
+              <div class="radio-group" role="group" aria-labelledby="roomGlassLabel">
+                <label>
+                  <input id="roomGlassIntact" type="radio" name="roomGlassDoor" value="Không vỡ" required />
+                  Không vỡ
+                </label>
+                <label>
+                  <input id="roomGlassBroken" type="radio" name="roomGlassDoor" value="Vỡ" />
+                  Vỡ
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="roomCeilingFanInput">Quạt trần</label>
+              <input type="number" id="roomCeilingFanInput" name="roomCeilingFanInput" min="0" step="1" required />
+            </div>
+
+            <div class="field field-radios">
+              <span class="field-label" id="roomCurtainLabel">Rèm cửa</span>
+              <div class="radio-group" role="group" aria-labelledby="roomCurtainLabel">
+                <label>
+                  <input id="roomCurtainYes" type="radio" name="roomCurtain" value="Có" required />
+                  Có
+                </label>
+                <label>
+                  <input id="roomCurtainNo" type="radio" name="roomCurtain" value="Không" />
+                  Không
+                </label>
+              </div>
+            </div>
+          </form>
+          <div class="actions actions-centered">
+            <button id="roomAddSubmitBtn" class="btn btn-primary" type="submit" form="roomAddForm">Lưu phòng</button>
+            <button class="btn btn-success" type="button" onclick="history.back()">Hủy</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

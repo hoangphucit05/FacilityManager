@@ -1,0 +1,193 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý danh mục</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 class="page-title">Quản lý danh mục tài sản</h1>
+          <div class="tabs">
+            <button id="categoryTabList" class="tab tab-active" type="button">Tất cả danh mục</button>
+            <button id="categoryTabAdd" class="tab" type="button">Thêm danh mục</button>
+            <button id="categoryTabExtra" class="tab" type="button" hidden>Bổ sung</button>
+          </div>
+
+          <div id="categoryListSection">
+            <div class="toolbar">
+              <div class="toolbar-left">
+                <span>Hiển thị</span>
+                <select
+                  id="categoryPageSizeSelect"
+                  style="width: 72px; padding: 6px 8px; border: 1px solid #d5dde7; border-radius: 4px"
+                >
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <div class="toolbar-search">
+                <input id="categorySearchInput" class="table-search-input" type="search" placeholder="Tìm kiếm" />
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr id="categoryTableHeadRow">
+                  <th>ID</th>
+                  <th>Mã danh mục</th>
+                  <th>Tên danh mục</th>
+                  <th>Chức năng</th>
+                </tr>
+              </thead>
+              <tbody id="categoryTableBody">
+                <tr data-category-id="1">
+                  <td>1</td>
+                  <td>MM-TB</td>
+                  <td>Máy móc, thiết bị</td>
+                  <td>Sửa/Xóa</td>
+                </tr>
+                <tr data-category-id="2">
+                  <td>2</td>
+                  <td>CC-DC</td>
+                  <td>Công cụ, dụng cụ</td>
+                  <td>Sửa/Xóa</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="categoryAddSection" hidden>
+            <form id="categoryForm" class="modern-form form-vertical" method="post" action="#">
+              <div class="field">
+                <label for="categoryNameInput">Tên danh mục</label>
+                <input id="categoryNameInput" name="categoryName" type="text" placeholder="Nhập tên danh mục" />
+                <p id="categoryNameError" class="field-hint" hidden>Hãy nhập danh mục của bạn !</p>
+              </div>
+              <div class="field">
+                <label for="categoryCodeInput">Mã danh mục</label>
+                <input id="categoryCodeInput" name="categoryCode" type="text" placeholder="Ví dụ: MM-TB" />
+                <select id="categoryCodeSelect" name="categoryType" hidden></select>
+              </div>
+              <div class="actions">
+                <button class="btn btn-primary" type="submit">Thêm</button>
+                <button id="categoryResetBtn" class="btn btn-success" type="button">Nhập lại</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

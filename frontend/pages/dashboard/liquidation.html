@@ -1,0 +1,219 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Điều chuyển tài sản</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER,STAFF">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 id="liquidationPageTitle" class="page-title">Điều chuyển tài sản</h1>
+          <div class="tabs">
+            <button id="transferTabAllAssets" class="tab tab-active" type="button">Tất cả tài sản</button>
+            <button id="transferTabHistory" class="tab" type="button">Danh sách tài sản điều chuyển</button>
+          </div>
+
+          <div id="transferAllAssetsSection">
+            <div style="overflow-x: auto">
+              <table>
+                <thead>
+                  <tr id="transferAllAssetsHeadRow">
+                    <th>ID</th>
+                    <th>Số thẻ</th>
+                    <th>Tên</th>
+                    <th>Khoa</th>
+                    <th>Lớp</th>
+                    <th><input id="transferSelectAllCheckbox" name="transferSelectAll" type="checkbox" /> Chức năng</th>
+                  </tr>
+                </thead>
+                <tbody id="transferAllAssetsBody">
+                  <tr data-asset-id="023"><td>1</td><td>023</td><td>Tivi LCD Sony 46 in</td><td>KT</td><td>CT13KT01</td><td><input name="transferAssetSelection" value="023" type="checkbox" /> ↩</td></tr>
+                  <tr data-asset-id="022"><td>2</td><td>022</td><td>Đàn Organ Yamaha E443</td><td>TL-GD</td><td>CT13TLGD01</td><td><input name="transferAssetSelection" value="022" type="checkbox" /> ↩</td></tr>
+                  <tr data-asset-id="021"><td>3</td><td>021</td><td>Ghitar classice</td><td>TL-GD</td><td>CT13TLGD01</td><td><input name="transferAssetSelection" value="021" type="checkbox" /> ↩</td></tr>
+                  <tr data-asset-id="020"><td>4</td><td>020</td><td>Cồng chiêng ( bộ )</td><td>NV-CTXH</td><td>CT13CTXH01</td><td><input name="transferAssetSelection" value="020" type="checkbox" /> ↩</td></tr>
+                  <tr data-asset-id="019"><td>5</td><td>019</td><td>Máy vi tính CMS</td><td>NV-CTXH</td><td>CT13CTXH01</td><td><input name="transferAssetSelection" value="019" type="checkbox" /> ↩</td></tr>
+                  <tr data-asset-id="018"><td>6</td><td>018</td><td>Máy vi tính Acer</td><td>NV-CTXH</td><td>CT13CTXH01</td><td><input name="transferAssetSelection" value="018" type="checkbox" /> ↩</td></tr>
+                  <tr data-asset-id="017"><td>7</td><td>017</td><td>Bảng chống lóa</td><td>NN</td><td>CT13TA02</td><td><input name="transferAssetSelection" value="017" type="checkbox" /> ↩</td></tr>
+                  <tr data-asset-id="016"><td>8</td><td>016</td><td>Bảng mecal</td><td>NN</td><td>CT13TA01</td><td><input name="transferAssetSelection" value="016" type="checkbox" /> ↩</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="transferHistorySection" hidden>
+            <div id="transferHistoryToolbar" class="table-toolbar">
+              <div class="table-toolbar-left">
+                <span>Hiển thị</span>
+                <select id="transferHistoryPageSizeSelect" style="width: 72px; padding: 6px 8px; border: 1px solid #d5dde7; border-radius: 4px">
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <div class="table-toolbar-right">
+                <input id="transferHistorySearchInput" class="table-search-input" type="text" placeholder="Tìm kiếm" />
+              </div>
+            </div>
+            <div style="overflow-x: auto">
+              <table>
+                <thead>
+                  <tr id="transferHistoryHeadRow">
+                    <th>ID</th>
+                    <th>Số thẻ</th>
+                    <th>Tên</th>
+                    <th>Đơn vị giao</th>
+                    <th>Đơn vị nhận</th>
+                    <th>Người giao</th>
+                    <th>Người nhận</th>
+                    <th>Ngày giao</th>
+                  </tr>
+                </thead>
+                <tbody id="transferHistoryBody">
+                  <tr><td>1</td><td>023</td><td>Tivi LCD Sony 46 in</td><td></td><td>Khoa Kinh tế</td><td>Trần Tiến Hợp</td><td>Đỗ Nhật Thanh</td><td>21/11/2016</td></tr>
+                  <tr><td>2</td><td>023</td><td>Tivi LCD Sony 46 in</td><td>Khoa Kinh tế</td><td>Khoa Công Nghệ Thông Tin</td><td>Đỗ Nhật Thanh</td><td>Võ Hoàng Phúc</td><td>25/11/2016</td></tr>
+                  <tr><td>3</td><td>002</td><td>Bàn giáo viên</td><td>Khoa Công Nghệ Thông Tin</td><td>Khoa Lý-Hóa-Sinh</td><td>Võ Hoàng Phúc</td><td>Trần Huỳnh Hòa Phúc</td><td>15/11/2016</td></tr>
+                  <tr><td>4</td><td>001</td><td>Bàn họp</td><td></td><td>Khoa Công Nghệ Thông Tin</td><td>Trần Huỳnh Hòa Phúc</td><td>Trần Tiến Hợp</td><td>15/11/2016</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p id="transferHistoryFooter" style="margin-top: 10px">Hiển thị 1 của 1 trang</p>
+          </div>
+
+          <div id="liquidationDetailSection" hidden>
+            <h2 id="liquidationDetailTitle" style="margin: 12px 0; padding: 8px 10px; background: #2d7fc1; color: #fff; border-radius: 4px">Thông tin thanh lý</h2>
+            <form id="liquidationDetailForm" class="form-grid" method="post" action="#" enctype="multipart/form-data">
+              <div class="field"><label for="liqCardInput">Số thẻ</label><input id="liqCardInput" name="cardNumber" /></div>
+              <div class="field"><label id="liqDateLabel" for="liqDateInput">Ngày thanh lý</label><input id="liqDateInput" name="liquidationDate" value="25/11/2016" /></div>
+              <div class="field"><label for="liqNameInput">Tên tài sản</label><input id="liqNameInput" name="assetName" /></div>
+              <div class="field"><label id="liqReasonLabel" for="liqReasonInput">Lý do thanh lý</label><input id="liqReasonInput" name="liquidationReason" placeholder="Nhập lý do thanh lý" /></div>
+              <div class="field"><label id="liqUnitLabel" for="liqUnitInput">Đơn vị</label><input id="liqUnitInput" name="unitName" /></div>
+              <div class="field"><label for="liqQuantityInput">Số lượng</label><input id="liqQuantityInput" name="quantity" placeholder="Nhập số lượng cần thanh lý" /></div>
+              <div class="field"><label id="liqUserLabel" for="liqUserInput">Người thanh lý</label><input id="liqUserInput" name="liquidatedBy" /></div>
+              <div class="field form-span-2">
+                <label>Hình ảnh</label>
+                <label class="upload-box" for="liqImageInput">
+                  <span id="liqImageHint">Thêm ảnh</span>
+                </label>
+                <input id="liqImageInput" name="attachments" type="file" accept="image/*" multiple />
+              </div>
+            </form>
+            <div class="actions actions-centered">
+              <button id="liqSubmitBtn" class="btn btn-success" type="submit" form="liquidationDetailForm">Thanh lý</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

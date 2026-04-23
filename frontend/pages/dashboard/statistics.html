@@ -1,0 +1,180 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thống kê tài sản</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem active" href="../dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 class="page-title">Thống kê tài sản</h1>
+          <div class="table-toolbar">
+            <div class="table-toolbar-left">
+              <span>Hiển thị</span>
+              <select id="statisticsPageSizeSelect" name="pageSize" style="width: 72px; padding: 6px 8px; border: 1px solid #d5dde7; border-radius: 4px">
+                <option>10</option>
+                <option>20</option>
+                <option>50</option>
+              </select>
+            </div>
+            <button class="tab" type="button" style="padding: 6px 12px">Copy</button>
+            <div class="table-toolbar-right">
+              <input id="statisticsSearchInput" name="keyword" class="table-search-input" type="text" placeholder="Tìm kiếm" />
+            </div>
+          </div>
+
+          <div style="overflow-x: auto">
+            <table id="statisticsTable">
+              <thead>
+                <tr>
+                  <th>Số thẻ</th>
+                  <th>Tên</th>
+                  <th>Đơn giá</th>
+                  <th>Số lượng</th>
+                  <th>Tòa nhà</th>
+                  <th>Lớp</th>
+                  <th>Danh mục</th>
+                  <th>Nguồn kinh phí</th>
+                  <th>Tình trạng</th>
+                </tr>
+                <tr>
+                  <th><select id="statisticsCardFilter" name="cardFilter" disabled><option>All</option></select></th>
+                  <th><select id="statisticsNameFilter" name="nameFilter" disabled><option>All</option></select></th>
+                  <th><select id="statisticsPriceFilter" name="priceFilter" disabled><option>All</option></select></th>
+                  <th><select id="statisticsQuantityFilter" name="quantityFilter" disabled><option>All</option></select></th>
+                  <th><select id="statisticsBuildingFilter" name="building"><option>All</option></select></th>
+                  <th><select id="statisticsClassFilter" name="classroom"><option>All</option></select></th>
+                  <th><select id="statisticsCategoryFilter" name="categoryFilter" disabled><option>All</option></select></th>
+                  <th><select id="statisticsFundingFilter" name="fundSource"><option>All</option></select></th>
+                  <th><select id="statisticsStatusFilter" name="status"><option>All</option></select></th>
+                </tr>
+              </thead>
+              <tbody id="statisticsTableBody">
+                <tr data-asset-id="1"><td>1</td><td>Tivi LCD Sony 46 in</td><td>15.000.000 đ</td><td>23</td><td>Tòa nhà E1</td><td>K65-KT01</td><td>Tivi</td><td>Dự án</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="2"><td>2</td><td>Đàn Organ Yamaha E443</td><td>7.100.000 đ</td><td>11</td><td>Tòa nhà E3</td><td>K65-TLGD01</td><td>Thiết bị âm nhạc</td><td>Nhà trường</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="3"><td>3</td><td>Ghitar classice</td><td>3.550.000 đ</td><td>2</td><td>Tòa nhà E4</td><td>K65-TLGD02</td><td>Thiết bị âm nhạc</td><td>Nhà trường</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="4"><td>4</td><td>Cồng chiêng ( bộ )</td><td>1.650.000 đ</td><td>3</td><td>Tòa nhà E5</td><td>K65-CTXH01</td><td>Thiết bị âm nhạc</td><td>Nhà trường</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="5"><td>5</td><td>Máy vi tính CMS</td><td>9.250.000 đ</td><td>6</td><td>Tòa nhà E6</td><td>K65-CTXH02</td><td>Máy vi tính</td><td>Dự án</td><td>Thanh lý</td></tr>
+                <tr data-asset-id="6"><td>6</td><td>Máy vi tính Acer</td><td>4.000.000 đ</td><td>20</td><td>Tòa nhà E7</td><td>K65-CTXH03</td><td>Máy vi tính</td><td>Nhà trường</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="7"><td>7</td><td>Bảng chống lóa</td><td>1.150.000 đ</td><td>3</td><td>Tòa nhà C1</td><td>K65-TA02</td><td>Bảng Mecl</td><td>Nhà trường</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="8"><td>8</td><td>Bảng mecal</td><td>800.000 đ</td><td>2</td><td>Tòa nhà C2</td><td>K65-TA01</td><td>Bảng Mecl</td><td>Dự án</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="9"><td>9</td><td>Tủ sắt hồ sơ 2 cánh</td><td>2.500.000 đ</td><td>2</td><td>Tòa nhà E8</td><td>K65-NT02</td><td>Tủ</td><td>Nhà trường</td><td>Đang sử dụng</td></tr>
+                <tr data-asset-id="10"><td>10</td><td>Tủ sắt 4 cánh có kính</td><td>2.860.000 đ</td><td>2</td><td>Tòa nhà E9</td><td>K65-NT03</td><td>Tủ</td><td>Dự án</td><td>Thanh lý</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

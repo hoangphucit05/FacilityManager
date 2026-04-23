@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cập nhật danh mục</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button"><span>Danh mục</span><span>▾</span></button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../dashboard/categories.html">Quản lý danh mục</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 class="page-title">Cập nhật danh mục - <span id="categoryEditCodeLabel">—</span></h1>
+          <p class="form-building-hint">Phạm vi: <strong id="categoryEditTypeLabel">—</strong></p>
+          <form id="categoryEditForm" class="form-grid" novalidate method="post" action="#">
+            <div id="categoryEditFormRoot"></div>
+          </form>
+          <div class="actions actions-centered">
+            <button id="categoryEditSaveBtn" class="btn btn-primary" type="submit" form="categoryEditForm">Cập nhật</button>
+            <button class="btn btn-success" type="button" id="categoryEditCancelBtn">Hủy</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

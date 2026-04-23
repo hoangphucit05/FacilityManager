@@ -1,0 +1,155 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý cơ sở vật chất - Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/components.css" />
+    <link rel="stylesheet" href="./assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER,STAFF,STUDENT">
+    <div class="app">
+      <aside class="sidebar">
+        <div id="sidebarBrandText" class="brand">ADMIN</div>
+        <div class="profile-box">
+          <img src="./assets/images/avatar-default.svg" alt="avatar" />
+          <div>
+            <p id="sidebarWelcomeText">Welcome,</p>
+            <strong id="sidebarRoleText">Administrator</strong>
+          </div>
+        </div>
+        <nav>
+          <a class="nav-item active" href="./index.html">Home</a>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="./pages/profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="./pages/dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="./pages/dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="./pages/dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="./pages/dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="./pages/dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="./pages/dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="./pages/dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="./pages/dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="./pages/dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="./pages/dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem" href="./pages/dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="./pages/dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="./pages/dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="./pages/profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div class="topbar-right">
+            <strong id="topbarRoleText">Administrator</strong>
+          </div>
+        </header>
+
+        <section class="cards-row">
+          <article class="stat-card">
+            <p>Tổng kinh phí</p>
+            <h2>900.000.000</h2>
+          </article>
+          <article class="stat-card">
+            <p>Tổng chi</p>
+            <h2>656.279.000</h2>
+          </article>
+          <article class="stat-card">
+            <p>Tổng thanh lý</p>
+            <h2>357.100.000</h2>
+          </article>
+        </section>
+
+        <section class="panel">
+          <h1>Thống kê số lượng tài sản hằng tháng</h1>
+          <div class="chart-placeholder">
+            <div class="peak"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/auth/auth.js"></script>
+    <script src="./assets/js/auth/guard.js"></script>
+    <script src="./assets/js/components/navigation.js"></script>
+    <script src="./assets/js/shared/menu-links.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

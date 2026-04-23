@@ -1,0 +1,193 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thêm user</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <h1 id="userFormPageTitle" class="page-title">Quản lý user</h1>
+        <section class="panel modern-panel">
+          <div class="tabs">
+            <a class="tab" href="../profile/users.html">User</a>
+            <a id="userFormTabLabel" class="tab tab-active" href="../profile/users-add.html">Thêm user</a>
+          </div>
+
+          <form id="userForm" class="form-grid modern-form" method="post" action="#" enctype="multipart/form-data">
+            <div class="field">
+              <label>Tài khoản</label>
+              <input id="userUsernameInput" name="username" placeholder="Tên đăng nhập" />
+            </div>
+            <div class="field">
+              <label>Mật khẩu</label>
+              <input id="userPasswordInput" name="password" type="password" placeholder="Mật khẩu" />
+            </div>
+            <div class="field form-span-2">
+              <label>Họ tên</label>
+              <input id="userFullnameInput" name="fullName" placeholder="Nguyễn Văn A" />
+            </div>
+            <div class="field form-span-2">
+              <label>Địa chỉ</label>
+              <input id="userAddressInput" name="address" placeholder="Nhập địa chỉ hiện tại" />
+            </div>
+            <div class="field form-span-2">
+              <label>Số điện thoại</label>
+              <input id="userPhoneInput" name="phoneNumber" placeholder="0901234567" />
+            </div>
+            <div class="field form-span-2">
+              <label>Chức vụ</label>
+              <select id="userRoleInput" name="role">
+                <option value="" selected disabled>Chọn chức vụ</option>
+                <option>Cán bộ quản lý tài sản</option>
+                <option>Hiệu trưởng</option>
+                <option>Kế toán</option>
+                <option>Giảng viên</option>
+              </select>
+            </div>
+            <div class="field form-span-2">
+              <label>Ảnh đại diện</label>
+              <div class="avatar-upload">
+                <label class="avatar-preview" id="avatarPreview" for="avatarInput">
+                  <img id="avatarImage" alt="avatar preview" />
+                  <span id="avatarPlaceholder">Chọn ảnh đại diện</span>
+                </label>
+                <input id="avatarInput" name="avatar" type="file" accept="image/*" />
+              </div>
+            </div>
+          </form>
+          <div class="actions actions-centered">
+            <button id="userFormSubmitBtn" class="btn btn-primary" type="button">Thêm</button>
+            <button class="btn btn-success" type="reset" form="userForm">Nhập lại</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+      const avatarInput = document.getElementById("avatarInput");
+      const avatarImage = document.getElementById("avatarImage");
+      const avatarPlaceholder = document.getElementById("avatarPlaceholder");
+
+      avatarInput.addEventListener("change", (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        const imageUrl = URL.createObjectURL(file);
+        avatarImage.src = imageUrl;
+        avatarImage.style.display = "block";
+        avatarPlaceholder.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

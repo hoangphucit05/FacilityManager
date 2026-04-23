@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER,STAFF,STUDENT">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Sinh viên</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../student/request-create.html">Tạo yêu cầu xử lý</a>
+              <a class="nav-subitem" href="../student/request-sent.html">Yêu cầu đã gửi</a>
+              <a class="nav-subitem" href="../student/request-drafts.html">Yêu cầu đã lưu</a>
+            </div>
+          </div>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 class="page-title">Liên hệ user</h1>
+
+          <div id="contactUserListSection" class="contact-cards-grid">
+            <article class="contact-card">
+              <div class="contact-card-info">
+                <h2 class="contact-card-name">Trần Tiến Hợp</h2>
+                <p class="contact-card-role">Cán bộ quản lý tài sản</p>
+                <div class="contact-card-divider"></div>
+                <p class="contact-card-meta"><strong>Địa chỉ:</strong> Bình Định</p>
+                <p class="contact-card-meta"><strong>Điện thoại:</strong> 1263751380</p>
+                <p class="contact-card-meta"><strong>Email:</strong> trantienhop@hotmail.com</p>
+                <a class="contact-view-profile-btn" href="../profile/contact-profile.html?user=tien-hop">View Profile</a>
+              </div>
+              <div class="contact-card-avatar-wrap">
+                <img class="contact-card-avatar" src="../../assets/images/avatar_1.jpg" alt="avatar Trần Tiến Hợp" />
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-card-info">
+                <h2 class="contact-card-name">Đỗ Nhật Thanh</h2>
+                <p class="contact-card-role">Cán bộ quản lý tài sản</p>
+                <div class="contact-card-divider"></div>
+                <p class="contact-card-meta"><strong>Địa chỉ:</strong> An Giang</p>
+                <p class="contact-card-meta"><strong>Điện thoại:</strong> 1263751380</p>
+                <p class="contact-card-meta"><strong>Email:</strong> donhatthanh@hotmail.com</p>
+                <a class="contact-view-profile-btn" href="../profile/contact-profile.html?user=nhat-thanh">View Profile</a>
+              </div>
+              <div class="contact-card-avatar-wrap">
+                <img class="contact-card-avatar" src="../../assets/images/avatar_2.jpg" alt="avatar Đỗ Nhật Thanh" />
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-card-info">
+                <h2 class="contact-card-name">Võ Hoàng Phúc</h2>
+                <p class="contact-card-role">Cán bộ quản lý tài sản</p>
+                <div class="contact-card-divider"></div>
+                <p class="contact-card-meta"><strong>Địa chỉ:</strong> Sóc Trăng</p>
+                <p class="contact-card-meta"><strong>Điện thoại:</strong> 1234459015</p>
+                <p class="contact-card-meta"><strong>Email:</strong> vohoangphuc@hotmail.com</p>
+                <a class="contact-view-profile-btn" href="../profile/contact-profile.html?user=hoang-phuc">View Profile</a>
+              </div>
+              <div class="contact-card-avatar-wrap">
+                <img class="contact-card-avatar" src="../../assets/images/avatar_3.jpg" alt="avatar Võ Hoàng Phúc" />
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-card-info">
+                <h2 class="contact-card-name">Trần Huỳnh Hòa Phúc</h2>
+                <p class="contact-card-role">Cán bộ quản lý tài sản</p>
+                <div class="contact-card-divider"></div>
+                <p class="contact-card-meta"><strong>Địa chỉ:</strong> Tiền Giang</p>
+                <p class="contact-card-meta"><strong>Điện thoại:</strong> 1263751380</p>
+                <p class="contact-card-meta"><strong>Email:</strong> tranhuynhhoaphuc@hotmail.com</p>
+                <a class="contact-view-profile-btn" href="../profile/contact-profile.html?user=huynh-hoa-phuc">View Profile</a>
+              </div>
+              <div class="contact-card-avatar-wrap">
+                <img class="contact-card-avatar" src="../../assets/images/avatar_4.jpg" alt="avatar Trần Huỳnh Hòa Phúc" />
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

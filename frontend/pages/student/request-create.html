@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo yêu cầu xử lý</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/student.css" />
+  </head>
+  <body data-required-roles="STUDENT" data-student-page="create-request">
+    <div class="student-shell">
+      <header class="student-topbar">
+        <button id="studentBackBtn" class="student-back" type="button">&#8592;</button>
+        TẠO YÊU CẦU XỬ LÝ
+      </header>
+
+      <main class="student-main">
+        <form id="studentRequestForm" method="post" action="#" enctype="multipart/form-data">
+        <label class="student-upload" for="studentAttachmentInput">
+          <input id="studentAttachmentInput" name="attachment" type="file" accept="image/*,video/*" hidden />
+          <div id="studentUploadPlaceholder">
+            <div class="student-upload-icon">&#128247;</div>
+            <div>Nhấn để chụp hình hoặc quay phim</div>
+          </div>
+          <img id="studentUploadPreviewImage" class="student-upload-preview" alt="Ảnh đính kèm" hidden />
+          <div id="studentUploadFileName" class="student-upload-file-name" hidden></div>
+        </label>
+
+        <section class="student-card" style="margin-top: 12px">
+          <div class="student-row">
+            <select id="studentManagerGroup" name="managerGroup" class="student-field">
+              <option value="">Nhóm quản lý</option>
+              <option value="CSVC">CSVC</option>
+              <option value="CNTT">CNTT</option>
+              <option value="Thiết bị">Thiết bị</option>
+            </select>
+            <select id="studentStatus" name="requestPriority" class="student-field">
+              <option value="">Trạng thái</option>
+              <option value="Khẩn cấp">Khẩn cấp</option>
+              <option value="Bình thường">Bình thường</option>
+              <option value="Theo dõi">Theo dõi</option>
+            </select>
+          </div>
+
+          <input id="studentManagerName" name="managerName" class="student-field" style="margin-top: 10px" placeholder="Tên người quản lý" />
+
+          <div class="student-title-row">
+            <input id="studentRequestTitle" name="title" class="student-field" placeholder="Tiêu đề: Nhập tiêu đề..." />
+          </div>
+
+          <div style="margin-top: 8px">
+            <div class="student-note-header">
+              <span>Ghi chú</span>
+              <span id="studentNoteCount">0/250</span>
+            </div>
+            <textarea id="studentRequestNote" name="note" class="student-textarea" maxlength="250" placeholder="Nhập ghi chú"></textarea>
+          </div>
+        </section>
+
+        <div class="student-actions">
+          <button id="studentSaveDraftBtn" class="student-btn" type="button">Lưu tạm</button>
+          <button id="studentSendNowBtn" class="student-btn" type="button">Gửi ngay</button>
+        </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/student/requests.js"></script>
+  </body>
+</html>

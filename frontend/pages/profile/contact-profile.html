@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hồ sơ user</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER,STAFF,STUDENT">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button"><span>User</span><span>▾</span></button>
+            <div class="nav-submenu"><a class="nav-subitem" href="../profile/users.html">Quản lý user</a></div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button"><span>Tòa nhà</span><span>▾</span></button>
+            <div class="nav-submenu"><a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a></div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button"><span>Danh mục</span><span>▾</span></button>
+            <div class="nav-submenu"><a class="nav-subitem" href="../dashboard/categories.html">Quản lý danh mục</a></div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button"><span>Tài sản</span><span>▾</span></button>
+            <div class="nav-submenu"><a class="nav-subitem" href="../dashboard/assets.html">Quản lý tài sản</a></div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button"><span>Sinh viên</span><span>▾</span></button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../student/request-create.html">Tạo yêu cầu xử lý</a>
+              <a class="nav-subitem" href="../student/request-sent.html">Yêu cầu đã gửi</a>
+              <a class="nav-subitem" href="../student/request-drafts.html">Yêu cầu đã lưu</a>
+            </div>
+          </div>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button"><span>Liên hệ</span><span>▾</span></button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <div style="display: grid; grid-template-columns: 140px 1fr; gap: 14px; align-items: center; margin-bottom: 12px">
+            <img id="profileAvatarImage" src="../../assets/images/avatar_1.jpg" alt="avatar profile" style="width: 140px; height: 140px; border: 5px solid #e7a46e; border-radius: 10px; object-fit: cover; background: #fff; padding: 6px" />
+            <div style="text-align: center">
+              <h1 id="profileName" class="page-title" style="margin: 0; text-transform: uppercase">TRẦN TIẾN HỢP</h1>
+              <p id="profileRole" style="margin-top: 6px">Cán bộ quản lý tài sản</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+            <section class="panel">
+              <h3 style="margin: 0 0 8px; background: #e7a46e; border-radius: 999px; padding: 6px 12px">Thông tin liên hệ</h3>
+              <p style="margin: 0 0 6px"><strong>Điện thoại:</strong> <span id="profilePhone">1263751380</span></p>
+              <p style="margin: 0 0 6px"><strong>Email:</strong> <span id="profileEmail">trantienhop@hotmail.com</span></p>
+              <p style="margin: 0"><strong>Địa chỉ:</strong> <span id="profileAddress">Bình Định</span></p>
+            </section>
+            <section class="panel">
+              <h3 style="margin: 0 0 8px; background: #e7a46e; border-radius: 999px; padding: 6px 12px">Trình độ học vấn</h3>
+              <p style="margin: 0">Đại học chuyên ngành Công nghệ thông tin.</p>
+              <h3 style="margin: 12px 0 8px; background: #e7a46e; border-radius: 999px; padding: 6px 12px">Kinh nghiệm làm việc</h3>
+              <p style="margin: 0">Quản lý danh mục tài sản, theo dõi điều chuyển và đánh giá định kỳ cho đơn vị.</p>
+            </section>
+            <section class="panel" style="grid-column: 1 / -1">
+              <h3 style="margin: 0 0 8px; background: #e7a46e; border-radius: 999px; padding: 6px 12px">Mục tiêu nghề nghiệp</h3>
+              <p style="margin: 0 0 10px">Mong muốn trở thành nhân viên quản lý tài sản chuyên nghiệp, đóng góp cho tổ chức và phát triển bền vững.</p>
+              <h3 style="margin: 0 0 8px; background: #e7a46e; border-radius: 999px; padding: 6px 12px">Kỹ năng</h3>
+              <p style="margin: 0">Quản lý dữ liệu tài sản, lập báo cáo, giao tiếp và phối hợp công việc tốt.</p>
+            </section>
+          </div>
+          <div class="actions actions-centered">
+            <button id="backToPreviousPageBtn" class="btn btn-primary" type="button">Quay lại danh sách</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,233 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý user</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER,STAFF">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <h1 class="page-title">Quản lý user</h1>
+        <section class="panel">
+          <div class="tabs">
+            <a class="tab" href="../profile/users.html">User</a>
+            <a class="tab" href="../profile/users-add.html">Thêm user</a>
+          </div>
+          <div class="toolbar">
+            <div class="toolbar-left">
+              <span>Hiển thị</span>
+              <select id="usersPageSizeSelect" style="width: 72px; padding: 6px 8px; border: 1px solid #d5dde7; border-radius: 4px">
+                <option>10</option>
+                <option>20</option>
+                <option>50</option>
+              </select>
+            </div>
+            <div class="toolbar-search">
+              <input id="usersSearchInput" class="table-search-input" type="search" placeholder="Tìm kiếm" />
+            </div>
+          </div>
+          <table>
+            <thead><tr><th>ID</th><th>Username</th><th>Fullname</th><th>Trạng thái</th><th>Chức vụ</th><th>Avatar</th><th>Chức năng</th></tr></thead>
+            <tbody>
+              <tr data-user-id="1" data-user-key="nhat-thanh">
+                <td>1</td>
+                <td>canbonhanvien</td>
+                <td>Đỗ Nhật Thanh</td>
+                <td><button class="status-pill on" type="button" aria-pressed="true" title="Đổi trạng thái"></button></td>
+                <td>Cán bộ quản lý tài sản</td>
+                <td><img class="avatar-thumb" src="../../assets/images/avatar_2.jpg" alt="avatar Đỗ Nhật Thanh" /></td>
+                <td>
+                  <div class="user-action-buttons">
+                    <button class="icon-btn user-view-btn" type="button" title="Xem thông tin chi tiết">
+                      <img src="../../assets/icons/view_infor.svg" alt="Xem thông tin" />
+                    </button>
+                    <button class="icon-btn user-update-btn" type="button" title="Cập nhật user">
+                      <img src="../../assets/icons/update.svg" alt="Cập nhật user" />
+                    </button>
+                    <button class="icon-btn user-delete-btn" type="button" title="Xóa user">
+                      <img src="../../assets/icons/delete.svg" alt="Xóa user" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr data-user-id="2" data-user-key="tien-hop">
+                <td>2</td>
+                <td>canbo</td>
+                <td>Trần Tiến Hợp</td>
+                <td><button class="status-pill on" type="button" aria-pressed="true" title="Đổi trạng thái"></button></td>
+                <td>Cán bộ quản lý tài sản</td>
+                <td><img class="avatar-thumb" src="../../assets/images/avatar_1.jpg" alt="avatar Trần Tiến Hợp" /></td>
+                <td>
+                  <div class="user-action-buttons">
+                    <button class="icon-btn user-view-btn" type="button" title="Xem thông tin chi tiết">
+                      <img src="../../assets/icons/view_infor.svg" alt="Xem thông tin" />
+                    </button>
+                    <button class="icon-btn user-update-btn" type="button" title="Cập nhật user">
+                      <img src="../../assets/icons/update.svg" alt="Cập nhật user" />
+                    </button>
+                    <button class="icon-btn user-delete-btn" type="button" title="Xóa user">
+                      <img src="../../assets/icons/delete.svg" alt="Xóa user" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr data-user-id="3" data-user-key="hoang-phuc">
+                <td>3</td>
+                <td>ht</td>
+                <td>Võ Hoàng Phúc</td>
+                <td><button class="status-pill" type="button" aria-pressed="false" title="Đổi trạng thái"></button></td>
+                <td>Hiệu trưởng</td>
+                <td><img class="avatar-thumb" src="../../assets/images/avatar_3.jpg" alt="avatar Võ Hoàng Phúc" /></td>
+                <td>
+                  <div class="user-action-buttons">
+                    <button class="icon-btn user-view-btn" type="button" title="Xem thông tin chi tiết">
+                      <img src="../../assets/icons/view_infor.svg" alt="Xem thông tin" />
+                    </button>
+                    <button class="icon-btn user-update-btn" type="button" title="Cập nhật user">
+                      <img src="../../assets/icons/update.svg" alt="Cập nhật user" />
+                    </button>
+                    <button class="icon-btn user-delete-btn" type="button" title="Xóa user">
+                      <img src="../../assets/icons/delete.svg" alt="Xóa user" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr data-user-id="4" data-user-key="huynh-hoa-phuc">
+                <td>4</td>
+                <td>nv</td>
+                <td>Trần Huỳnh Hòa Phúc</td>
+                <td><button class="status-pill on" type="button" aria-pressed="true" title="Đổi trạng thái"></button></td>
+                <td>Lao Công</td>
+                <td><img class="avatar-thumb" src="../../assets/images/avatar_4.jpg" alt="avatar Trần Huỳnh Hòa Phúc" /></td>
+                <td>
+                  <div class="user-action-buttons">
+                    <button class="icon-btn user-view-btn" type="button" title="Xem thông tin chi tiết">
+                      <img src="../../assets/icons/view_infor.svg" alt="Xem thông tin" />
+                    </button>
+                    <button class="icon-btn user-update-btn" type="button" title="Cập nhật user">
+                      <img src="../../assets/icons/update.svg" alt="Cập nhật user" />
+                    </button>
+                    <button class="icon-btn user-delete-btn" type="button" title="Xóa user">
+                      <img src="../../assets/icons/delete.svg" alt="Xóa user" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

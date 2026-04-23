@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xem thông tin tài sản</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER,STAFF">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button"><span>Tài sản</span><span>▾</span></button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../dashboard/assets.html">Quản lý tài sản</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 class="page-title">Xem thông tin tài sản</h1>
+          <div class="asset-detail-section">
+            <form id="assetViewForm" class="form-grid asset-detail-form" method="post" action="#">
+              <div class="field form-span-2"><label for="assetNameInput">Tên tài sản</label><input id="assetNameInput" name="assetName" type="text" /></div>
+              <div class="field form-span-2"><label for="assetProviderInput">Công ty cung cấp</label><select id="assetProviderInput" name="provider"><option>Công ty MTV Quang Minh tại Quảng Nam</option><option>Công ty TNHH Trần Tâm</option></select></div>
+              <div class="field form-span-2"><label for="assetCountryInput">Nước sản xuất</label><select id="assetCountryInput" name="country"><option>Việt Nam</option><option>Nhật Bản</option></select></div>
+              <div class="field form-span-2"><label for="assetCardInput">Số thẻ</label><input id="assetCardInput" name="cardNumber" type="text" /></div>
+              <div class="field"><label for="assetDepartmentInput">Khoa</label><select id="assetDepartmentInput" name="department"><option>Khoa Kinh tế</option><option>Khoa Nghệ thuật</option></select></div>
+              <div class="field"><label for="assetClassInput">Lớp</label><select id="assetClassInput" name="classroom"><option>CT13KT01</option><option>CT13LLCT01 KT</option><option>CT13TLGD01 TL-GD</option></select></div>
+              <div class="field"><label for="assetTypeInput">Loại tài sản</label><select id="assetTypeInput" name="assetType"><option>Công cụ, dụng cụ</option><option>Thiết bị âm nhạc</option><option>Máy in</option></select></div>
+              <div class="field"><label for="assetCategoryInput">Mục tài sản</label><select id="assetCategoryInput" name="itemCategory"><option>Tivi</option><option>Máy in</option><option>Đàn</option></select></div>
+              <div class="field"><label for="assetManufactureYearInput">Năm sản xuất</label><input id="assetManufactureYearInput" name="manufactureYear" type="number" min="1900" max="2100" step="1" /></div>
+              <div class="field"><label for="assetUnitPriceInput">Đơn giá</label><input id="assetUnitPriceInput" name="unitPrice" type="number" min="0" step="1000" inputmode="numeric" /></div>
+              <div class="field"><label for="assetQuantityInput">Số lượng</label><input id="assetQuantityInput" name="quantity" type="number" min="0" step="1" inputmode="numeric" /></div>
+              <div class="field"><label for="assetOriginalPriceInput">Nguyên giá</label><input id="assetOriginalPriceInput" name="originalPrice" type="number" min="0" step="1000" inputmode="numeric" /></div>
+              <div class="field"><label for="assetFundInput">Nguồn kinh phí</label><select id="assetFundInput" name="fundSource"><option>Dự án</option><option>Ngân sách</option></select></div>
+              <div class="field"><label for="assetUsageTimeInput">Thời gian SD</label><input id="assetUsageTimeInput" name="usageTime" type="number" min="0" step="1" inputmode="numeric" /></div>
+              <div class="field"><label for="assetPurchaseDateInput">Ngày mua</label><input id="assetPurchaseDateInput" name="purchaseDate" type="date" /></div>
+              <div class="field"><label for="assetUsageYearInput">Năm sử dụng</label><input id="assetUsageYearInput" name="usageYear" type="number" min="1900" max="2100" step="1" /></div>
+              <div class="field"><label for="assetBuyerInput">Người mua</label><select id="assetBuyerInput" name="buyer"><option>Trần Tiến Hợp</option><option>Đỗ Nhật Thanh</option><option>Võ Hoàng Phúc</option><option>Trần Huỳnh Hòa Phúc</option></select></div>
+              <div class="field form-span-2"><label for="assetNoteInput">Ghi chú</label><textarea id="assetNoteInput" name="note" class="asset-note-input" rows="4"></textarea></div>
+            </form>
+            <div class="actions actions-centered asset-detail-actions">
+              <button id="assetViewBackBtn" class="btn btn-success" type="button">Quay lại</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

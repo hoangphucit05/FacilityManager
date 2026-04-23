@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài sản</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+  <body data-required-roles="ADMIN,MANAGER,STAFF">
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">ADMIN</div>
+        <nav>
+          <a class="nav-item" href="../../index.html">Home</a>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>User</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/users.html">Quản lý user</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Tòa nhà</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E4</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E5</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E6</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E7</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E9</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà E10</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà EB8</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C1</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C2</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Tòa nhà C3</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Giảng đường Đa Năng</a>
+              <a class="nav-subitem" href="../dashboard/departments.html">Căn Tin</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Danh mục</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/categories.html">Quản lý danh mục</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Máy móc, thiết bị</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Công cụ, dụng cụ</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nguồn kinh phí</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nhà cung cấp</a>
+              <a class="nav-subitem" href="../dashboard/categories.html">Nước</a>
+            </div>
+          </div>
+          <div class="nav-group open">
+            <button class="nav-group-toggle" type="button">
+              <span>Tài sản</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem active" href="../dashboard/assets.html">Quản lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Điều chuyển tài sản</a>
+              <a class="nav-subitem" href="../dashboard/liquidation.html">Thanh lý tài sản</a>
+              <a class="nav-subitem" href="../dashboard/statistics.html">Thống kê</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Đánh giá</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá tài sản</a>
+              <a class="nav-subitem" href="../dashboard/assets.html">Đánh giá lại tài sản</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <button class="nav-group-toggle" type="button">
+              <span>Liên hệ</span>
+              <span>▾</span>
+            </button>
+            <div class="nav-submenu">
+              <a class="nav-subitem" href="../profile/contact.html">Liên hệ user</a>
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="panel">
+          <h1 id="assetPageTitle" class="page-title">Quản lý tài sản</h1>
+          <div id="assetTabs" class="tabs">
+            <button id="assetTabList" class="tab tab-active" type="button">Tất cả tài sản</button>
+            <button id="assetTabDetail" class="tab" type="button">Thêm tài sản</button>
+            <button id="assetTabTransfer" class="tab" type="button">Điều chuyển</button>
+          </div>
+
+          <div id="assetListSection">
+            <div class="table-toolbar">
+              <div class="table-toolbar-left">
+                <span>Hiển thị</span>
+                <select id="assetListPageSizeSelect" style="width: 72px; padding: 6px 8px; border: 1px solid #d5dde7; border-radius: 4px">
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <div class="table-toolbar-right">
+                <input id="assetListSearchInput" class="table-search-input" type="text" placeholder="Tìm kiếm" />
+              </div>
+            </div>
+            <div style="overflow-x: auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th><input id="assetSelectAllCheckbox" name="assetSelectAll" type="checkbox" /></th>
+                    <th>Số thẻ</th>
+                    <th>Tên</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Danh mục</th>
+                    <th>Đơn vị</th>
+                    <th>Người mua</th>
+                    <th>Tình trạng</th>
+                    <th>Đánh giá</th>
+                    <th>Chức năng</th>
+                  </tr>
+                </thead>
+                <tbody id="assetTableBody">
+                  <tr
+                    data-asset-id="024"
+                    data-asset-name="Máy in Canon"
+                    data-provider="Công ty MTV Quang Minh tại Quảng Nam"
+                    data-country="Việt Nam"
+                    data-card-number="024"
+                    data-department="Khoa Kinh tế"
+                    data-building="Tòa nhà E1"
+                    data-classroom="CT13LLCT01 KT"
+                    data-asset-type="Máy in"
+                    data-item-category="Máy in"
+                    data-manufacture-year="2016"
+                    data-unit-price="4380000"
+                    data-quantity="20"
+                    data-original-price="0"
+                    data-fund-source="Dự án"
+                    data-usage-time="3"
+                    data-purchase-date="2016-11-20"
+                    data-usage-year="2016"
+                    data-note=""
+                    data-buyer="Trần Tiến Hợp"
+                  >
+                    <td><input name="assetRowSelector" value="024" type="checkbox" /></td>
+                    <td>024</td>
+                    <td>Máy in Canon</td>
+                    <td>4.380.000 đ</td>
+                    <td>20</td>
+                    <td>Máy in</td>
+                    <td>CT13LLCT01 KT</td>
+                    <td>Trần Tiến Hợp</td>
+                    <td><button class="status-pill on" type="button" aria-pressed="true"></button></td>
+                    <td>★ ★ ★ ★ ☆</td>
+                    <td>
+                      <div class="room-action-buttons user-action-buttons">
+                        <button class="icon-btn asset-view-btn" type="button" title="Xem chi tiết">
+                          <img src="../../assets/icons/view_infor.svg" alt="Xem chi tiết" />
+                        </button>
+                        <button class="icon-btn asset-transfer-btn" type="button" title="Điều chuyển">
+                          <img src="../../assets/icons/dieu_chuyen_1.svg" alt="Điều chuyển" />
+                        </button>
+                        <button class="icon-btn asset-update-btn" type="button" title="Cập nhật">
+                          <img src="../../assets/icons/update.svg" alt="Cập nhật" />
+                        </button>
+                        <button class="icon-btn asset-delete-btn" type="button" title="Xóa">
+                          <img src="../../assets/icons/delete.svg" alt="Xóa" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    data-asset-id="023"
+                    data-asset-name="Tivi LCD Sony 46 in"
+                    data-provider="Công ty MTV Quang Minh tại Quảng Nam"
+                    data-country="Việt Nam"
+                    data-card-number="023"
+                    data-department="Khoa Kinh tế"
+                    data-building="Tòa nhà E1"
+                    data-classroom="CT13KT01"
+                    data-asset-type="Công cụ, dụng cụ"
+                    data-item-category="Tivi"
+                    data-manufacture-year="2016"
+                    data-unit-price="15000000"
+                    data-quantity="25"
+                    data-original-price="0"
+                    data-fund-source="Dự án"
+                    data-usage-time="3"
+                    data-purchase-date="2016-11-20"
+                    data-usage-year="2016"
+                    data-note=""
+                    data-buyer="Đỗ Nhật Thanh"
+                  >
+                    <td><input name="assetRowSelector" value="023" type="checkbox" /></td>
+                    <td>023</td>
+                    <td>Tivi LCD Sony 46 in</td>
+                    <td>15.000.000 đ</td>
+                    <td>25</td>
+                    <td>Tivi</td>
+                    <td>CT13KT01 KT</td>
+                    <td>Đỗ Nhật Thanh</td>
+                    <td><button class="status-pill on" type="button" aria-pressed="true"></button></td>
+                    <td>★ ★ ★ ★ ☆</td>
+                    <td>
+                      <div class="room-action-buttons user-action-buttons">
+                        <button class="icon-btn asset-view-btn" type="button" title="Xem chi tiết">
+                          <img src="../../assets/icons/view_infor.svg" alt="Xem chi tiết" />
+                        </button>
+                        <button class="icon-btn asset-transfer-btn" type="button" title="Điều chuyển">
+                          <img src="../../assets/icons/dieu_chuyen_1.svg" alt="Điều chuyển" />
+                        </button>
+                        <button class="icon-btn asset-update-btn" type="button" title="Cập nhật">
+                          <img src="../../assets/icons/update.svg" alt="Cập nhật" />
+                        </button>
+                        <button class="icon-btn asset-delete-btn" type="button" title="Xóa">
+                          <img src="../../assets/icons/delete.svg" alt="Xóa" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    data-asset-id="022"
+                    data-asset-name="Đàn Organ Yamaha E443"
+                    data-provider="Công ty TNHH Trần Tâm"
+                    data-country="Việt Nam"
+                    data-card-number="022"
+                    data-department="Khoa Nghệ thuật"
+                    data-building="Tòa nhà E3"
+                    data-classroom="CT13TLGD01 TL-GD"
+                    data-asset-type="Thiết bị âm nhạc"
+                    data-item-category="Đàn"
+                    data-manufacture-year="2016"
+                    data-unit-price="7100000"
+                    data-quantity="11"
+                    data-original-price="0"
+                    data-fund-source="Ngân sách"
+                    data-usage-time="2"
+                    data-purchase-date="2016-11-20"
+                    data-usage-year="2016"
+                    data-note=""
+                    data-buyer="Võ Hoàng Phúc"
+                  >
+                    <td><input name="assetRowSelector" value="022" type="checkbox" /></td>
+                    <td>022</td>
+                    <td>Đàn Organ Yamaha E443</td>
+                    <td>7.100.000 đ</td>
+                    <td>11</td>
+                    <td>Thiết bị âm nhạc</td>
+                    <td>CT13TLGD01 TL-GD</td>
+                    <td>Võ Hoàng Phúc</td>
+                    <td><button class="status-pill on" type="button" aria-pressed="true"></button></td>
+                    <td>★ ★ ★ ☆ ☆</td>
+                    <td>
+                      <div class="room-action-buttons user-action-buttons">
+                        <button class="icon-btn asset-view-btn" type="button" title="Xem chi tiết">
+                          <img src="../../assets/icons/view_infor.svg" alt="Xem chi tiết" />
+                        </button>
+                        <button class="icon-btn asset-transfer-btn" type="button" title="Điều chuyển">
+                          <img src="../../assets/icons/dieu_chuyen_1.svg" alt="Điều chuyển" />
+                        </button>
+                        <button class="icon-btn asset-update-btn" type="button" title="Cập nhật">
+                          <img src="../../assets/icons/update.svg" alt="Cập nhật" />
+                        </button>
+                        <button class="icon-btn asset-delete-btn" type="button" title="Xóa">
+                          <img src="../../assets/icons/delete.svg" alt="Xóa" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="assetDetailSection" class="asset-detail-section" hidden>
+            <div class="asset-detail-header">
+              <h2>Thêm tài sản</h2>
+              <p>Nhập thông tin tài sản mới vào hệ thống.</p>
+            </div>
+            <form id="assetDetailForm" class="form-grid asset-detail-form" method="post" action="#">
+              <div class="field form-span-2">
+                <label for="assetNameInput">Tên tài sản</label>
+                <input id="assetNameInput" name="assetName" type="text" />
+              </div>
+              <div class="field form-span-2">
+                <label for="assetProviderInput">Công ty cung cấp</label>
+                <select id="assetProviderInput" name="provider">
+                  <option>Công ty MTV Quang Minh tại Quảng Nam</option>
+                  <option>Công ty TNHH Trần Tâm</option>
+                </select>
+              </div>
+              <div class="field form-span-2">
+                <label for="assetCountryInput">Nước sản xuất</label>
+                <select id="assetCountryInput" name="country">
+                  <option>Việt Nam</option>
+                  <option>Nhật Bản</option>
+                </select>
+              </div>
+              <div class="field form-span-2">
+                <label for="assetCardInput">Số thẻ</label>
+                <input id="assetCardInput" name="cardNumber" type="text" />
+              </div>
+              <div class="field">
+                <label for="assetDepartmentInput">Khoa</label>
+                <select id="assetDepartmentInput" name="department">
+                  <option>Khoa Kinh tế</option>
+                  <option>Khoa Nghệ thuật</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="assetClassInput">Lớp</label>
+                <select id="assetClassInput" name="classroom">
+                  <option>CT13KT01</option>
+                  <option>CT13LLCT01 KT</option>
+                  <option>CT13TLGD01 TL-GD</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="assetTypeInput">Loại tài sản</label>
+                <select id="assetTypeInput" name="assetType">
+                  <option>Công cụ, dụng cụ</option>
+                  <option>Thiết bị âm nhạc</option>
+                  <option>Máy in</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="assetCategoryInput">Mục tài sản</label>
+                <select id="assetCategoryInput" name="itemCategory">
+                  <option>Tivi</option>
+                  <option>Máy in</option>
+                  <option>Đàn</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="assetManufactureYearInput">Năm sản xuất</label>
+                <input id="assetManufactureYearInput" name="manufactureYear" type="number" min="1900" max="2100" step="1" />
+              </div>
+              <div class="field">
+                <label for="assetUnitPriceInput">Đơn giá</label>
+                <input id="assetUnitPriceInput" name="unitPrice" type="number" min="0" step="1000" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="assetQuantityInput">Số lượng</label>
+                <input id="assetQuantityInput" name="quantity" type="number" min="0" step="1" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="assetOriginalPriceInput">Nguyên giá</label>
+                <input id="assetOriginalPriceInput" name="originalPrice" type="number" min="0" step="1000" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="assetFundInput">Nguồn kinh phí</label>
+                <select id="assetFundInput" name="fundSource">
+                  <option>Dự án</option>
+                  <option>Ngân sách</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="assetUsageTimeInput">Thời gian SD</label>
+                <input id="assetUsageTimeInput" name="usageTime" type="number" min="0" step="1" inputmode="numeric" />
+              </div>
+              <div class="field">
+                <label for="assetPurchaseDateInput">Ngày mua</label>
+                <input id="assetPurchaseDateInput" name="purchaseDate" type="date" />
+              </div>
+              <div class="field">
+                <label for="assetUsageYearInput">Năm sử dụng</label>
+                <input id="assetUsageYearInput" name="usageYear" type="number" min="1900" max="2100" step="1" />
+              </div>
+              <div class="field">
+                <label for="assetBuyerInput">Người mua</label>
+                <select id="assetBuyerInput" name="buyer">
+                  <option>Trần Tiến Hợp</option>
+                  <option>Đỗ Nhật Thanh</option>
+                  <option>Võ Hoàng Phúc</option>
+                  <option>Trần Huỳnh Hòa Phúc</option>
+                </select>
+              </div>
+              <div class="field form-span-2">
+                <label for="assetNoteInput">Ghi chú</label>
+                <textarea id="assetNoteInput" name="note" class="asset-note-input" rows="4" placeholder="Nhập ghi chú chi tiết..."></textarea>
+              </div>
+            </form>
+            <div class="actions actions-centered asset-detail-actions">
+              <button id="assetDetailSubmitBtn" class="btn btn-primary" type="submit" form="assetDetailForm">Thêm</button>
+              <button id="assetDetailResetBtn" class="btn btn-success" type="reset" form="assetDetailForm">Nhập lại</button>
+            </div>
+          </div>
+
+          <div id="assetTransferSection" hidden>
+            <form id="assetTransferForm" class="form-grid" method="post" action="#">
+              <div class="field">
+                <label for="transferCardInput">Số thẻ</label>
+                <input id="transferCardInput" name="cardNumber" readonly />
+              </div>
+              <div class="field">
+                <label for="transferCategoryInput">Mục tài sản</label>
+                <input id="transferCategoryInput" name="itemCategory" readonly />
+              </div>
+              <div class="field">
+                <label for="transferNameInput">Tên tài sản</label>
+                <input id="transferNameInput" name="assetName" readonly />
+              </div>
+              <div class="field">
+                <label for="transferTypeInput">Loại tài sản</label>
+                <input id="transferTypeInput" name="assetType" readonly />
+              </div>
+              <div class="field">
+                <label for="transferBuildingInput">Tòa nhà</label>
+                <input id="transferBuildingInput" name="sourceBuilding" readonly />
+              </div>
+              <div class="field">
+                <label for="transferGiverInput">Người giao</label>
+                <input id="transferGiverInput" name="giverName" readonly />
+              </div>
+              <div class="field">
+                <label for="transferClassInput">Lớp</label>
+                <input id="transferClassInput" name="sourceClassroom" readonly />
+              </div>
+              <div class="field">
+                <label for="transferReceiverInput">Người nhận</label>
+                <select id="transferReceiverInput" name="receiverName">
+                  <option value="">-- Chọn người nhận --</option>
+                  <option>Trần Tiến Hợp</option>
+                  <option>Đỗ Nhật Thanh</option>
+                  <option>Võ Hoàng Phúc</option>
+                  <option>Trần Huỳnh Hòa Phúc</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="transferTargetBuildingInput">Đến tòa nhà</label>
+                <select id="transferTargetBuildingInput" name="targetBuilding">
+                  <option value="">-- Chọn tòa nhà --</option>
+                  <option>Tòa nhà E1</option>
+                  <option>Tòa nhà E3</option>
+                  <option>Tòa nhà E4</option>
+                  <option>Tòa nhà E5</option>
+                  <option>Tòa nhà E6</option>
+                  <option>Tòa nhà E7</option>
+                  <option>Tòa nhà E8</option>
+                  <option>Tòa nhà E9</option>
+                  <option>Tòa nhà E10</option>
+                  <option>Tòa nhà EB8</option>
+                  <option>Tòa nhà C1</option>
+                  <option>Tòa nhà C2</option>
+                  <option>Tòa nhà C3</option>
+                  <option>Giảng đường Đa Năng</option>
+                  <option>Căn Tin</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="transferDateInput">Ngày nhận</label>
+                <input id="transferDateInput" name="receivedDate" type="date" value="2016-11-25" />
+              </div>
+              <div class="field">
+                <label for="transferTargetClassInput">Lớp nhận</label>
+                <select id="transferTargetClassInput" name="targetClassroom">
+                  <option value="">-- Chọn lớp --</option>
+                  <option>LOGISTICS</option>
+                  <option>KTCĐT+CKĐL</option>
+                  <option>KTĐTVT</option>
+                  <option>KTOTO</option>
+                  <option>KTXD</option>
+                  <option>KTXDCTGT.1</option>
+                  <option>KTXDCTGT.2</option>
+                  <option>NKTXD.1+NKTXD.2</option>
+                  <option>QLXD+KTĐ</option>
+                  <option>TĐHĐK</option>
+                  <option>CKĐL</option>
+                  <option>CKĐL_N_1</option>
+                  <option>CKĐL_N_2</option>
+                  <option>KTCĐT</option>
+                  <option>KTCĐT_N_1</option>
+                  <option>KTCĐT_N_2</option>
+                  <option>KTOTO_N_1</option>
+                  <option>KTOTO_N_2</option>
+                  <option>KTOTO_N_3</option>
+                  <option>KTVTAI</option>
+                  <option>CNTT</option>
+                  <option>CNTT_N_1</option>
+                  <option>CNTT_N_2</option>
+                  <option>CNTT_N_3</option>
+                  <option>KTĐ</option>
+                  <option>KTĐ_N_1</option>
+                  <option>KTĐ_N_2</option>
+                  <option>KTĐTVT_N_1</option>
+                  <option>KTĐTVT_N_2</option>
+                  <option>KTĐTVT_N_3</option>
+                  <option>QTDL&LH</option>
+                  <option>KIENTRUC</option>
+                  <option>NKTXD.1</option>
+                  <option>NKTXD.2</option>
+                  <option>KTTH</option>
+                  <option>KDQT</option>
+                  <option>QTKD</option>
+                  <option>TC-NH</option>
+                  <option>QLXD</option>
+                </select>
+              </div>
+            </form>
+            <div class="actions actions-centered">
+              <button class="btn btn-success" type="submit" form="assetTransferForm">Điều chuyển</button>
+            </div>
+          </div>
+
+          <div id="assetRatingSection" hidden>
+            <div class="table-toolbar">
+              <div class="table-toolbar-left">
+                <span>Hiển thị</span>
+                <select id="assetRatingPageSizeSelect" style="width: 72px; padding: 6px 8px; border: 1px solid #d5dde7; border-radius: 4px">
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <div class="table-toolbar-right">
+                <input id="assetRatingSearchInput" class="table-search-input" type="text" placeholder="Tìm kiếm" />
+              </div>
+            </div>
+            <div style="overflow-x: auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Số thẻ</th>
+                    <th>Tên</th>
+                    <th>Tòa nhà</th>
+                    <th>Lớp</th>
+                    <th>Đánh giá</th>
+                  </tr>
+                </thead>
+                <tbody id="assetRatingTableBody">
+                  <tr><td>023</td><td>Tivi LCD Sony 46 in</td><td>Tòa nhà E1</td><td>K65-KT01</td><td>★ ★ ★ ★ ★</td></tr>
+                  <tr><td>022</td><td>Đàn Organ Yamaha E443</td><td>Tòa nhà E3</td><td>K65-TLGD01</td><td>★ ★ ☆ ☆ ☆</td></tr>
+                  <tr><td>021</td><td>Ghitar classice</td><td>Tòa nhà E4</td><td>K65-TLGD01</td><td>☆ ☆ ☆ ☆ ☆</td></tr>
+                  <tr><td>020</td><td>Cồng chiêng ( bộ )</td><td>Tòa nhà E5</td><td>K65-CTXH01</td><td>★ ★ ★ ☆ ☆</td></tr>
+                  <tr><td>019</td><td>Máy vi tính CMS</td><td>Tòa nhà E6</td><td>K65-CTXH01</td><td>☆ ☆ ☆ ☆ ☆</td></tr>
+                  <tr><td>018</td><td>Máy vi tính Acer</td><td>Tòa nhà E7</td><td>K65-CTXH01</td><td>☆ ☆ ☆ ☆ ☆</td></tr>
+                  <tr><td>017</td><td>Bảng chống lóa</td><td>Tòa nhà C1</td><td>K65-TA02</td><td>☆ ☆ ☆ ☆ ☆</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="assetReRatingSection" hidden>
+            <div class="tabs">
+              <button id="reRatingTabAllAssets" class="tab tab-active" type="button">Tất cả tài sản</button>
+              <button id="reRatingTabRatedAssets" class="tab" type="button">Tài sản đã đánh giá lại</button>
+            </div>
+            <div id="reRatingTableSection">
+              <div class="table-toolbar">
+                <div class="table-toolbar-left">
+                  <span>Hiển thị</span>
+                  <select id="assetReRatingPageSizeSelect" style="width: 72px; padding: 6px 8px; border: 1px solid #d5dde7; border-radius: 4px">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                  </select>
+                </div>
+                <div class="table-toolbar-right">
+                  <input id="assetReRatingSearchInput" class="table-search-input" type="text" placeholder="Tìm kiếm" />
+                </div>
+              </div>
+              <div style="overflow-x: auto">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Số thẻ</th>
+                      <th>Tên</th>
+                      <th>Tòa nhà</th>
+                      <th>Lớp</th>
+                      <th>Đánh giá</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reRatingTableBody">
+                    <tr data-card="023" data-name="Tivi LCD Sony 46 in" data-unit="Tòa nhà E1" data-quantity="23" data-price="15.000.000 đ" data-duration="3 năm">
+                      <td>1</td><td>023</td><td>Tivi LCD Sony 46 in</td><td>Tòa nhà E1</td><td>K65-KT01</td><td><button class="asset-rerating-btn" type="button">Đánh giá lại</button></td>
+                    </tr>
+                    <tr data-card="022" data-name="Đàn Organ Yamaha E443" data-unit="Tòa nhà E3" data-quantity="11" data-price="7.100.000 đ" data-duration="2 năm">
+                      <td>2</td><td>022</td><td>Đàn Organ Yamaha E443</td><td>Tòa nhà E3</td><td>K65-TLGD01</td><td><button class="asset-rerating-btn" type="button">Đánh giá lại</button></td>
+                    </tr>
+                    <tr data-card="021" data-name="Ghitar classice" data-unit="Tòa nhà E4" data-quantity="2" data-price="3.550.000 đ" data-duration="3 năm">
+                      <td>3</td><td>021</td><td>Ghitar classice</td><td>Tòa nhà E4</td><td>K65-TLGD01</td><td><button class="asset-rerating-btn" type="button">Đánh giá lại</button></td>
+                    </tr>
+                    <tr data-card="020" data-name="Cồng chiêng ( bộ )" data-unit="Tòa nhà E5" data-quantity="3" data-price="1.650.000 đ" data-duration="3 năm">
+                      <td>4</td><td>020</td><td>Cồng chiêng ( bộ )</td><td>Tòa nhà E5</td><td>K65-CTXH01</td><td><button class="asset-rerating-btn" type="button">Đánh giá lại</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="reRatingHistorySection" class="panel" style="margin-top: 12px" hidden>
+                <h3 id="reRatingHistoryTitle" style="margin-bottom: 10px">Lịch sử đánh giá</h3>
+                <div id="reRatingHistoryList"></div>
+              </div>
+            </div>
+
+            <div id="reRatingFormSection" hidden>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+                <div style="border: 1px solid #c9d7e5; border-radius: 4px">
+                  <h3 style="margin: 0; padding: 8px 12px; background: #2d7fc1; color: #fff">Thông tin tài sản cần đánh giá</h3>
+                  <form style="padding: 12px" class="form-grid" method="post" action="#">
+                    <div class="field form-span-2"><label for="reInfoName">Tên tài sản</label><input id="reInfoName" name="assetName" /></div>
+                    <div class="field form-span-2"><label for="reInfoUnit">Đơn vị sử dụng</label><input id="reInfoUnit" name="unitName" /></div>
+                    <div class="field form-span-2"><label for="reInfoQuantity">Số lượng</label><input id="reInfoQuantity" name="quantity" /></div>
+                    <div class="field form-span-2"><label for="reInfoPrice">Đơn giá</label><input id="reInfoPrice" name="unitPrice" /></div>
+                    <div class="field form-span-2"><label for="reInfoDuration">Thời hạn sử dụng</label><input id="reInfoDuration" name="duration" /></div>
+                  </form>
+                </div>
+                <div style="border: 1px solid #c9d7e5; border-radius: 4px">
+                  <h3 style="margin: 0; padding: 8px 12px; background: #2d7fc1; color: #fff">Thông tin tài sản được đánh giá</h3>
+                  <form style="padding: 12px" class="form-grid" method="post" action="#">
+                    <div class="field form-span-2"><label for="reRateReviewer">Người đánh giá</label><input id="reRateReviewer" name="reviewerName" placeholder="Nhập người đánh giá" /></div>
+                    <div class="field form-span-2">
+                      <label for="reRateStars">Số sao</label>
+                      <select id="reRateStars" name="ratingStars">
+                        <option value="">-- Chọn số sao --</option>
+                        <option value="5">★★★★★ (5 sao)</option>
+                        <option value="4">★★★★☆ (4 sao)</option>
+                        <option value="3">★★★☆☆ (3 sao)</option>
+                        <option value="2">★★☆☆☆ (2 sao)</option>
+                        <option value="1">★☆☆☆☆ (1 sao)</option>
+                      </select>
+                    </div>
+                    <div class="field form-span-2"><label for="reRateDate">Thời gian đánh giá</label><input id="reRateDate" name="ratedAt" type="datetime-local" /></div>
+                    <div class="field form-span-2"><label for="reRateNote">Nội dung đánh giá</label><textarea id="reRateNote" name="ratingNote" rows="4" placeholder="Nhập nội dung đánh giá..."></textarea></div>
+                  </form>
+                </div>
+              </div>
+              <div class="actions actions-centered">
+                <button id="reRateSaveBtn" class="btn btn-primary" type="button">Lưu</button>
+                <button id="reRateCancelBtn" class="btn btn-success" type="button">Hủy</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/shared/menu-links.js"></script>
+    <script src="../../assets/js/shared/table-controls.js"></script>
+    <script src="../../assets/js/shared/room-helpers.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yêu cầu đã lưu</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/student.css" />
+  </head>
+  <body data-required-roles="STUDENT" data-student-page="draft-requests">
+    <div class="student-shell">
+      <header class="student-topbar">
+        <button id="studentBackBtn" class="student-back" type="button">&#8592;</button>
+        YÊU CẦU ĐÃ LƯU
+      </header>
+
+      <main class="student-main">
+        <div id="studentEmptyState" class="student-list-wrap">
+          <div>
+            <div class="student-empty-icon">&#128230;</div>
+            <div data-empty-text>Không có yêu cầu nào được lưu tạm</div>
+          </div>
+        </div>
+        <div id="studentRequestList" class="student-list" hidden></div>
+      </main>
+    </div>
+
+    <script src="../../assets/js/auth/auth.js"></script>
+    <script src="../../assets/js/auth/guard.js"></script>
+    <script src="../../assets/js/student/requests.js"></script>
+  </body>
+</html>
