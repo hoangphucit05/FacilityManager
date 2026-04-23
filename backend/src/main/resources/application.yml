@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: study-backend
+
+# TODO: Bổ sung datasource, jpa, flyway...
